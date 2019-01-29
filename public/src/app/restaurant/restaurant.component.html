@@ -1,0 +1,7 @@
+
+<div *ngIf="editRestaurant">
+  <app-edit></app-edit>
+</div>
+<div *ngIf="!editRestaurant">
+  <router-outlet></router-outlet>
+</div>

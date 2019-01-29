@@ -1,0 +1,31 @@
+<div *ngIf="restaurant">
+  <h2>Write a review for {{restaurant.name}}</h2>
+  <p class="red" *ngFor="let e of errors | keyvalue">
+    {{e.value}}
+  </p>
+  <form *ngIf="newReview" #newForm="ngForm" (submit)="submitButton()">
+    <p>
+      Your Name: <input type="text" name="newReview.name" [(ngModel)]="newReview.name" (keyup)="nameOnKeyUp($event)" required minlength=3 #name="ngModel"/><br>
+      <span class="red">{{nameError}}</span>
+    </p>
+    <p>
+      Stars: 
+      <select name="newReview.stars" [(ngModel)]="newReview.stars">
+        <option value="1">1 star</option>
+        <option value="2">2 stars</option>
+        <option value="3">3 stars</option>
+        <option value="4">4 stars</option>
+        <option value="5">5 stars</option>
+      </select>
+    </p>
+    <p>
+        Your Review:<br>
+         <input type="text" name="newReview.review" [(ngModel)]="newReview.review" (keyup)="reviewOnKeyUp($event)" required minlength=3 #review="ngModel"/><br>
+         <span class="red">{{reviewError}}</span>
+    </p>
+    <p>
+      <button (click)="cancelButton()">Cancel</button><br>
+      <input type="submit" value="Submit" [disabled]="newForm.form.invalid">
+    </p>
+  </form>
+</div>

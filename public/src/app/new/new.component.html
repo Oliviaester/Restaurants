@@ -1,0 +1,23 @@
+<h2>
+  Register a Restaurant
+</h2>
+<form *ngIf="newRestaurant" #newForm="ngForm" (submit)="registerButton()">
+  <p class="red" *ngIf="errors">
+    {{errors}}
+  </p>
+  <p>
+    Restaurant Name:<br>
+    <input type="text" name="newRestaurant.name" [(ngModel)]="newRestaurant.name" (keyup)="nameOnKeyUp($event)" required minlength=3 #name="ngModel"/><br>
+    <span class="red">{{nameError}}</span>
+  </p>
+  <p>
+    Cuisine:<br>
+    <input type="text" name="newRestaurant.cuisine" [(ngModel)]="newRestaurant.cuisine" (keyup)="cuisineOnKeyUp($event)" required minlength=3 #cuisine="ngModel"/><br>
+    <span class="red">{{cuisineError}}</span>
+  </p>
+  <p>
+    <input type="submit" value="Register" [disabled]="newForm.form.invalid"><br>
+    <button (click)="cancelButton()">Cancel</button>
+  </p>
+
+</form>

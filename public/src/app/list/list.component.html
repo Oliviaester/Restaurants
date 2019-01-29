@@ -1,0 +1,18 @@
+<p><button (click)="newRestaurantButton()">New Restaurant</button></p>
+
+<table>
+  <tr>
+    <th>Restaurant</th>
+    <th>Cuisine</th>
+    <th>Actions available</th>
+  </tr>
+  <tr *ngFor="let r of restaurants">
+    <td>{{r.name}}</td>
+    <td>{{r.cuisine}}</td>
+    <td>
+      <button (click)="reviewsButton(r)">Read reviews</button> 
+      <button (click)="updateButton(r)">Update</button> 
+      <button *ngIf="r.delta <= 30" (click)="deleteButton(r)">Delete</button>
+    </td>
+  </tr>
+</table>

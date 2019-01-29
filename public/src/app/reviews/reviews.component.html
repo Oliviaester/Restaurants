@@ -1,0 +1,16 @@
+<div *ngIf="restaurant">
+  <h2>Reviews for {{restaurant.name}}</h2>
+  <p><button (click)="newButton()">New Review</button></p>
+  <table>
+    <tr>
+      <th>Customer</th>
+      <th>Stars</th>
+      <th>Description</th>
+    </tr>
+    <tr *ngFor="let r of restaurant.reviews">
+      <td>{{r.name}}</td>
+      <td>{{r.stars}}</td>
+      <td>{{r.review}}</td>
+    </tr>
+  </table>
+</div>
