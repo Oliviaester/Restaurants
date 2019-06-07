@@ -1,9 +1,12 @@
-<div id="container">
-  <h1>Let's eat</h1>
-  <div *ngIf="_httpService.editRestaurant">
-      <app-edit></app-edit>
-  </div>
-  <div *ngIf="!_httpService.editRestaurant">
-      <app-restaurant></app-restaurant>
-  </div>
+<div class="header">
+        <h1>Let's eat </h1>
 </div>
+    <div class="content">
+   
+        <div *ngIf="_httpService.editRestaurant">
+            <app-edit></app-edit>
+        </div>
+        <div *ngIf="!_httpService.editRestaurant">
+            <app-restaurant></app-restaurant>
+        </div>
+    </div>

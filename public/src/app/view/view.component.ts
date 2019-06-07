@@ -14,4 +14,8 @@ export class ViewComponent implements OnInit {
     private _router: Router
   ) { }
 
+  ngOnInit(){
+    
+  }
+
 }

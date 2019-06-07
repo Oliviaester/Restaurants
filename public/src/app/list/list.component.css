@@ -1,0 +1,18 @@
+p {
+    text-align: right;
+}
+th {
+    font-size: 1.5em;
+}
+.table {
+    border: 1px solid #d9d9d9;
+    font-family: 'Tenor Sans', sans-serif;
+}
+.btn {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.read, .update, .delete {
+    padding: 5px 10px;
+    margin: 5px;
+}

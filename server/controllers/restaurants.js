@@ -1,7 +1,20 @@
 var mongoose = require('mongoose');
 var Restaurant = mongoose.model('Restaurant');
+const axios = require('axios');
 
 module.exports = { 
+
+    testforapi: (req,res)=>{
+        let url = 'https://developers.zomato.com/api/v2.1/search?entity_id=281&entity_type=city&count=10';
+        headers = {'user-key': 'f049fbc05d28f470b6704aef385117ae'}
+        axios.get(url, {'headers': headers})
+        .then(response => {
+            res.json(response['data']['restaurants'])
+        }).catch(error => {
+            console.log(error);
+          });
+    },
+
     readRestaurants: (req,res)=>{
         Restaurant.find({}, (err,restaurants)=>{
             if(err){

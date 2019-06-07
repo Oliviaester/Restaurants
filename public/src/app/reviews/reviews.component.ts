@@ -35,5 +35,8 @@ export class ReviewsComponent implements OnInit {
   newButton(){
     this._router.navigate(['/restaurants',this.restaurant._id,"review"])
   }
+  backButton(){
+    this._router.navigate(['/restaurants'])
+  }
 
 }

@@ -1,11 +1,13 @@
+<div class="content">
 <div *ngIf="restaurant">
   <h2>Write a review for {{restaurant.name}}</h2>
   <p class="red" *ngFor="let e of errors | keyvalue">
     {{e.value}}
   </p>
-  <form *ngIf="newReview" #newForm="ngForm" (submit)="submitButton()">
+  <form *ngIf="newReview" #newForm="ngForm" (submit)="submitButton()" autocomplete="off">
     <p>
-      Your Name: <input type="text" name="newReview.name" [(ngModel)]="newReview.name" (keyup)="nameOnKeyUp($event)" required minlength=3 #name="ngModel"/><br>
+      Your Name: <br>
+      <input type="text" name="newReview.name" [(ngModel)]="newReview.name" (keyup)="nameOnKeyUp($event)" required minlength=3 #name="ngModel"/>
       <span class="red">{{nameError}}</span>
     </p>
     <p>
@@ -20,12 +22,13 @@
     </p>
     <p>
         Your Review:<br>
-         <input type="text" name="newReview.review" [(ngModel)]="newReview.review" (keyup)="reviewOnKeyUp($event)" required minlength=3 #review="ngModel"/><br>
+         <input type="text" name="newReview.review" [(ngModel)]="newReview.review" (keyup)="reviewOnKeyUp($event)" required minlength=3 #review="ngModel"/>
          <span class="red">{{reviewError}}</span>
     </p>
     <p>
-      <button (click)="cancelButton()">Cancel</button><br>
-      <input type="submit" value="Submit" [disabled]="newForm.form.invalid">
+      <input type="submit" value="Submit" [disabled]="newForm.form.invalid" class="btn btn-secondary">
+      <button (click)="cancelButton()" class="btn btn-danger">Cancel</button>
     </p>
   </form>
+</div>
 </div>

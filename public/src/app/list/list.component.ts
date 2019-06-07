@@ -26,10 +26,10 @@ export class ListComponent implements OnInit {
       }else{
         console.log("success",data)
         this.restaurants = data['data']
-        for ( var i=0; i<this.restaurants.length; i++){
-          var now = new Date();
-          this.restaurants[i]["delta"] = (new Date() - new Date(this.restaurants[i].createdAt ))/1000;
-        }
+        // for ( var i=0; i<this.restaurants.length; i++){
+        //   var now = new Date();
+        //   this.restaurants[i]["delta"] = (new Date() - new Date(this.restaurants[i].createdAt ))/1000;
+        // }
       }
     })
   }

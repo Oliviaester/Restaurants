@@ -7,7 +7,9 @@ import { HttpClient } from '@angular/common/http';
 export class HttpService {
   public editRestaurant: any
   constructor(private _http: HttpClient) { }
-
+  testtest() {
+    return this._http.get('/getapi')
+  }
   getRestaurants(){
     return this._http.get('/r')
   }

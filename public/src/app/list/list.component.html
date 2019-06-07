@@ -1,18 +1,24 @@
-<p><button (click)="newRestaurantButton()">New Restaurant</button></p>
 
-<table>
-  <tr>
-    <th>Restaurant</th>
-    <th>Cuisine</th>
-    <th>Actions available</th>
-  </tr>
-  <tr *ngFor="let r of restaurants">
-    <td>{{r.name}}</td>
-    <td>{{r.cuisine}}</td>
-    <td>
-      <button (click)="reviewsButton(r)">Read reviews</button> 
-      <button (click)="updateButton(r)">Update</button> 
-      <button *ngIf="r.delta <= 30" (click)="deleteButton(r)">Delete</button>
-    </td>
-  </tr>
+
+
+<p><button (click)="newRestaurantButton()" class="btn btn-secondary">Add a Restaurant</button></p>
+<table class="table">
+  <thead class = thead>
+    <tr>
+      <th style="width: 35%">Restaurant</th>
+      <th style="width: 25%">Cusine</th>
+      <th style="width: 40%" class="text-center">Actions available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let r of restaurants">
+      <td>{{r.name}}</td>
+      <td>{{r.cuisine}}</td>
+      <td>
+        <button (click)="reviewsButton(r)" class="read">Read reviews</button> 
+        <button (click)="updateButton(r)" class="update">Update</button> 
+        <button (click)="deleteButton(r)" class="delete">Delete</button>
+      </td>
+    </tr>
+  </tbody>
 </table>

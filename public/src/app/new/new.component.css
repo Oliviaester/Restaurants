@@ -1,9 +1,15 @@
 .red{
     color: red;
 }
-.ng-invalid { }
-.ng-valid { }
-.ng-untouched { }
-.ng-touched { }
-.ng-dirty { }
-.ng-pristine { }
+.content {
+    font-family: 'Tenor Sans', sans-serif;
+}
+.btn {
+    margin: 5px;
+}
+h2 {
+    margin-bottom: 40px;
+}
+input {
+    margin-top: 10px;
+}

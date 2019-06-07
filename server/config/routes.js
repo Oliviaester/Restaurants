@@ -2,6 +2,9 @@ var restaurants = require('./../controllers/restaurants');
 var path = require('path');
 
 module.exports = (app)=>{
+    app.get('/getapi', (req,res)=>{
+        restaurants.testforapi(req,res);
+    });
     app.get('/r', (req,res)=>{
         restaurants.readRestaurants(req,res);
     });

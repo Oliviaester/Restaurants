@@ -1,3 +1,15 @@
 .red{
     color: red;
 }
+.content {
+    font-family: 'Tenor Sans', sans-serif;
+}
+.btn {
+    margin: 5px;
+}
+input {
+    margin-top: 10px;
+}
+h2 {
+    margin-bottom: 40px;
+}

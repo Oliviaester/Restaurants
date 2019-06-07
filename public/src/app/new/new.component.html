@@ -1,3 +1,4 @@
+<div class="content">
 <h2>
   Register a Restaurant
 </h2>
@@ -16,8 +17,9 @@
     <span class="red">{{cuisineError}}</span>
   </p>
   <p>
-    <input type="submit" value="Register" [disabled]="newForm.form.invalid"><br>
-    <button (click)="cancelButton()">Cancel</button>
+    <input class="btn btn-secondary" type="submit" value="Register" [disabled]="newForm.form.invalid">
+    <button class="btn btn-danger" (click)="cancelButton()">Cancel</button>
   </p>
 
 </form>
+</div>

@@ -1,11 +1,12 @@
+<div class="content">
 <div *ngIf="restaurant">
   <h2>Reviews for {{restaurant.name}}</h2>
-  <p><button (click)="newButton()">New Review</button></p>
-  <table>
+  <p><button (click)="newButton()" class="btn btn-light">New Review</button><button (click)="backButton()" class="btn btn-secondary">Go Back</button></p>
+  <table class="table">
     <tr>
-      <th>Customer</th>
-      <th>Stars</th>
-      <th>Description</th>
+      <th style="width: 30%">Customer</th>
+      <th style="width: 10%">Stars</th>
+      <th class="text-center" style="width: 60%">Description</th>
     </tr>
     <tr *ngFor="let r of restaurant.reviews">
       <td>{{r.name}}</td>
@@ -13,4 +14,5 @@
       <td>{{r.review}}</td>
     </tr>
   </table>
+</div>
 </div>

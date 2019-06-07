@@ -16,12 +16,12 @@ export class AppComponent {
     private _router: Router
   ){}
   ngOnInit(){
-    // this._httpService.getSession().subscribe(data=>{
-    //   if(data['data']){
-    //     this._httpService.getRestaurant({_id: data['data']})
-    //   }else{
-    //     this.editRestaurant = undefined;
-    //   }
-    // })
+    this._httpService.getSession().subscribe(data=>{
+      if(data['data']){
+        this._httpService.getRestaurant({_id: data['data']})
+      }else{
+        this.editRestaurant = undefined;
+      }
+    })
   }
 }
